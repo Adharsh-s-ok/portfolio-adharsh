@@ -1,0 +1,148 @@
+.hero {
+  position: relative;
+  width: 100%;
+  height: 100svh;
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+}
+
+/* ── Canvas ──────────────────────────────────────────────────────── */
+.hero__canvas {
+  position: absolute;
+  inset: 0;
+  z-index: var(--z-canvas);
+}
+
+.hero__canvas canvas {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+/* ── Vignette ────────────────────────────────────────────────────── */
+.hero__vignette {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 80% 60% at 50% 100%, transparent 40%, var(--bg) 100%),
+    linear-gradient(to top, var(--bg) 0%, transparent 50%);
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* ── Content ─────────────────────────────────────────────────────── */
+.hero__content {
+  position: relative;
+  z-index: var(--z-content);
+  padding-bottom: clamp(3rem, 8vh, 6rem);
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
+}
+
+.hero__meta {
+  font-size: 0.72rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.hero__title {
+  font-family: var(--font-serif);
+  font-size: clamp(5rem, 13vw, 13rem);
+  font-weight: 300;
+  line-height: 0.9;
+  letter-spacing: -0.02em;
+  overflow: hidden;
+}
+
+.hero__title em {
+  font-style: italic;
+  color: var(--accent);
+}
+
+/* Each char gets overflow hidden for reveal */
+.hero__title .char {
+  display: inline-block;
+  overflow: hidden;
+}
+
+.hero__subtitle {
+  font-size: clamp(0.9rem, 1.4vw, 1.1rem);
+  font-weight: 300;
+  color: var(--fg-muted);
+  line-height: 1.7;
+  max-width: 38ch;
+}
+
+/* ── CTAs ────────────────────────────────────────────────────────── */
+.hero__cta {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 0.5rem;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  padding: 0.9rem 2rem;
+  border-radius: 100px;
+  transition: all 0.4s var(--ease-expo);
+}
+
+.btn--primary {
+  background: var(--accent);
+  color: var(--bg);
+  font-weight: 500;
+}
+
+.btn--primary:hover {
+  background: var(--fg);
+}
+
+.btn--ghost {
+  border: 1px solid var(--border);
+  color: var(--fg);
+}
+
+.btn--ghost:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+/* ── Scroll indicator ────────────────────────────────────────────── */
+.hero__scroll {
+  position: absolute;
+  bottom: 2.5rem;
+  right: clamp(1.5rem, 5vw, 5rem);
+  z-index: var(--z-content);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.hero__scroll-text {
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--fg-muted);
+  writing-mode: vertical-rl;
+}
+
+.hero__scroll-line {
+  width: 1px;
+  height: 60px;
+  background: linear-gradient(to bottom, var(--accent), transparent);
+  animation: scrollPulse 2s ease-in-out infinite;
+}
+
+@keyframes scrollPulse {
+  0%, 100% { transform: scaleY(1); opacity: 1; }
+  50%       { transform: scaleY(0.5); opacity: 0.4; }
+}

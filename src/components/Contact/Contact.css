@@ -1,0 +1,113 @@
+.contact {
+  padding: clamp(6rem, 16vh, 14rem) 0 clamp(3rem, 6vh, 5rem);
+  border-top: 1px solid var(--border);
+}
+
+.contact__header {
+  margin-bottom: 3rem;
+}
+
+.contact__index {
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  color: var(--fg-muted);
+  text-transform: uppercase;
+}
+
+/* ── Heading ─────────────────────────────────────────────────────── */
+.contact__heading {
+  font-family: var(--font-serif);
+  font-size: clamp(3rem, 9vw, 9rem);
+  font-weight: 300;
+  line-height: 1.0;
+  letter-spacing: -0.02em;
+  margin-bottom: clamp(3rem, 8vh, 6rem);
+}
+
+.contact__heading em {
+  font-style: italic;
+  color: var(--accent);
+}
+
+/* ── Email ───────────────────────────────────────────────────────── */
+.contact__email-wrap {
+  margin-bottom: clamp(4rem, 10vh, 8rem);
+}
+
+.contact__email {
+  display: inline-flex;
+  align-items: center;
+  gap: 1rem;
+  font-family: var(--font-serif);
+  font-size: clamp(1.2rem, 2.5vw, 2rem);
+  font-weight: 300;
+  color: var(--fg);
+  padding-bottom: 0.4rem;
+  border-bottom: 1px solid var(--border);
+  transition: color 0.3s, border-color 0.3s;
+}
+
+.contact__email:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+}
+
+.contact__email-arrow {
+  font-size: 1.4em;
+  transition: transform 0.3s;
+  display: inline-block;
+}
+
+.contact__email:hover .contact__email-arrow {
+  transform: translate(6px, -6px);
+}
+
+/* ── Footer ──────────────────────────────────────────────────────── */
+.contact__footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 2rem;
+  border-top: 1px solid var(--border);
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.contact__footer-copy {
+  font-size: 0.72rem;
+  letter-spacing: 0.05em;
+  color: var(--fg-muted);
+}
+
+.contact__socials {
+  display: flex;
+  gap: 1.8rem;
+}
+
+.contact__socials a {
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--fg-muted);
+  position: relative;
+  transition: color 0.3s;
+}
+
+.contact__socials a::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: var(--accent);
+  transition: width 0.3s var(--ease-expo);
+}
+
+.contact__socials a:hover {
+  color: var(--fg);
+}
+
+.contact__socials a:hover::after {
+  width: 100%;
+}

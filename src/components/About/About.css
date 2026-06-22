@@ -1,0 +1,110 @@
+.about {
+  padding: clamp(6rem, 14vh, 12rem) 0;
+  border-top: 1px solid var(--border);
+}
+
+.about__header {
+  display: flex;
+  align-items: flex-start;
+  gap: 3rem;
+  margin-bottom: 5rem;
+}
+
+.about__index {
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  color: var(--fg-muted);
+  text-transform: uppercase;
+  margin-top: 0.6rem;
+  white-space: nowrap;
+}
+
+.about__tagline {
+  font-family: var(--font-serif);
+  font-size: clamp(2.4rem, 5vw, 5rem);
+  font-weight: 300;
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+}
+
+.about__tagline em {
+  font-style: italic;
+  color: var(--accent);
+}
+
+.about__body {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(2rem, 6vw, 8rem);
+}
+
+@media (max-width: 768px) {
+  .about__body { grid-template-columns: 1fr; }
+}
+
+/* ── Bio ──────────────────────────────────────────────────────────── */
+.about__bio {
+  font-size: clamp(0.95rem, 1.3vw, 1.1rem);
+  font-weight: 300;
+  color: var(--fg-muted);
+  line-height: 1.9;
+  max-width: 50ch;
+  margin-bottom: 3rem;
+}
+
+.about__stat {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.about__stat-num {
+  font-family: var(--font-serif);
+  font-size: clamp(3rem, 6vw, 5.5rem);
+  font-weight: 300;
+  line-height: 1;
+  color: var(--fg);
+}
+
+.about__stat-label {
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--fg-muted);
+}
+
+/* ── Skills ───────────────────────────────────────────────────────── */
+.about__skills-col {
+  padding-top: 0.3rem;
+}
+
+.about__skills-label {
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 1.5rem;
+}
+
+.about__skills {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.about__skill {
+  font-size: 0.78rem;
+  letter-spacing: 0.05em;
+  padding: 0.45rem 1rem;
+  border: 1px solid var(--border);
+  border-radius: 100px;
+  color: var(--fg-muted);
+  transition: color 0.3s, border-color 0.3s, background 0.3s;
+}
+
+.about__skill:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+  background: var(--accent-dim);
+}
